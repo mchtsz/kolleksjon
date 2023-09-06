@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+.form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+input {
+    font-size: 24px;
+    transition: 0.2s ease-in-out;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    outline: none;
+    border: none;
+}
+
+input:hover {
+    transform: scale(1.1);
+}
+
+/* hide input placeholder */
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input[type=submit] {
+    background-color: #e1e1de;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
