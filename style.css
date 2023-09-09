@@ -2,10 +2,21 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  user-select: none;
 }
 
 h1 {
-    color: white;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    width: 500px;
+}
+
+#InfoText {
+    color: rgb(51, 195, 35);
+}
+
+#ErrorText {
+    color: rgb(255, 0, 0);
 }
 
 .form-container {
