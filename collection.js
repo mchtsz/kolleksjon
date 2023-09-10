@@ -1,8 +1,11 @@
 const ErrorText = document.getElementById("ErrorText");
 const InfoText = document.getElementById("InfoText");
 const form = document.getElementById("form");
-let kundeListe = [{}];
 
+// lager en tom liste som vi kan legge til kunder i
+let kundeListe = [];
+
+// her lager vi en funksjon som formaterer dataen vi får fra formen
 function formatFormData(formData, ...args) {
   const data = {};
 
@@ -13,11 +16,13 @@ function formatFormData(formData, ...args) {
   return data;
 }
 
+// her lager vi en funksjon som returnerer en error melding
 function returnErr(message) {
   ErrorText.innerText = message;
   return false;
 }
 
+// her lager vi en eventlistener som lytter etter når formen blir submittet
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -35,6 +40,9 @@ form.addEventListener("submit", (event) => {
   );
 
   // console.log(data);
+
+
+  // her sjekker vi om passordet er gyldig
   let hasUpperCase = /[A-Z]/.test(data.passord);
   let hasLowerCase = /[a-z]/.test(data.passord);
   let hasNumber = /\d/.test(data.passord);
@@ -42,6 +50,7 @@ form.addEventListener("submit", (event) => {
     data.passord
   );
 
+  // her bruker vi variablene ovenfor i en if statment og sjekker om passordet er gyldig
   if (data.passord.length < 10) {
     return returnErr("Passordet må være minst 10 tegn langt");
   } else if (!hasUpperCase && hasLowerCase) {
